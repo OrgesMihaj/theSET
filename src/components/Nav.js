@@ -4,29 +4,44 @@ class Nav extends Component {
 
     render () {
         return (
-            <nav className="navbar" role="navigation" aria-label="main navigation">
-                
-                {/* Container section starts here */}
-                <div className="container-fluid">
-                    <div className="navbar-brand">
+            <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+                <div className="navbar-brand">
 
-                        {/* Brand logo */}
-                        <a className="navbar-item" href="https://bulma.io">
-                            <img src="https://bulma.io/images/bulma-logo.png" alt="theSET" width="112" height="28" />
-                        </a>
+                    {/* Brand logo */}
+                    <a className="navbar-item" href="https://bulma.io">
+                        <img src="https://bulma.io/images/bulma-logo.png" alt="theSET" width="112" height="28" />
+                    </a>
 
-                        {/* Burger icon visible only on mobiles */}
-                        <a role="button" className="navbar-burger burger" href="/"
-                        aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                        </a>
+                    {/* Burger icon visible only on mobiles */}
+                    <a role="button" className="navbar-burger burger" href="/"
+                    aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
 
+                {/* <Navbar-menu starts here> */}
+                <div className="navbar-menu">
+                    <div className="navbar-end">
+                        <li className="navbar-item">
+                            <a className="navbar-item-link is-active" href="/">Now</a>
+                        </li>
+
+                        <li className="navbar-item">
+                            <a href="/" className="navbar-item">Tournaments</a>
+                        </li>
+
+                        <li className="navbar-item">
+                            <a href="/" className="navbar-item">Articles</a>
+                        </li>
+                        
+                        <li className="navbar-item">
+                            <a href="/" className="navbar-item">Who?</a>
+                        </li>
                     </div>
-                </div> 
-                {/* Container section ends here */}
-
+                </div>
+                {/* </Navbar-menu ends here> */}
             </nav>
         );
     }; /* </render> */
