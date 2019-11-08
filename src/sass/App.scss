@@ -1,0 +1,83 @@
+// ITCSS: Inverted Triangle CSS by Harry Roberts
+// ---------------------------------------------
+
+// Soruces:
+// 1. xfive.co/blog/itcss-scalable-maintainable-css-architecture
+// 2. xfive.co/blog/itcss-year-after
+
+
+// Key metrics:
+// 
+// 1. Generic to explicit: 
+// +  Start out with the most generic, low-level, catch-all, unremarkable
+//    styles, and eventually progress to more explicit and specific rules.
+//    
+// 2. Low specificity to high specificity: 
+// +  The lowest-specificity selectors appear towards the beginning, with 
+//    specificity steadily increasing as we progress through the project.
+// 
+// 3. Far-reaching to localised
+// +  Selectors towards the beginning of the project affect a lot of the DOM, 
+//    with that reach being progressively lessened as we go through the codebase.
+
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Bulma framework base styles. 
+// Website: bulma.io
+@import '../../node_modules/bulma/sass/utilities/_all.sass';
+@import '../../node_modules/bulma/sass/base/_all.sass';
+
+// ---------------------------------------------
+// ITCSS structure
+
+
+// Settings 
+// + used with preprocessors and contain font, colors definitions, etc.
+@import './settings/global.scss';
+@import './settings/colors.scss';
+
+// Tools
+// + globally used mixins and functions. It’s important not to output 
+//   any CSS in the first 2 layers.
+@import './tools/mixin.scss';
+
+// Generic
+// + reset and/or normalize styles, box-sizing definition, etc. 
+//   This is the first layer which generates actual CSS.
+@import './generic/reset.scss';
+@import './generic/normalize.scss';
+@import './generic/box-sizing.scss';
+@import './generic/shared.scss';
+
+// Elements
+// + styling for bare HTML elements (like H1, A, etc.). These come 
+//   with default styling from the browser so we can redefine them here.
+@import '../../node_modules/bulma/sass/elements/tag.sass';
+@import '../../node_modules/bulma/sass/elements/title.sass';
+@import '../../node_modules/bulma/sass/elements/button.sass';
+@import './elements/headings.scss';
+@import './elements/images.scss';
+@import './elements/links.scss';
+
+// Objects
+// + class-based selectors which define undecorated design patterns, 
+//   for example media object known from OOCSS.
+@import '../../node_modules/bulma/sass/layout/hero.sass';
+@import '../../node_modules/bulma/sass/layout/section.sass';
+@import '../../node_modules/bulma/sass/elements/container.sass';
+@import '../../node_modules/bulma/sass/form/_all.sass';
+@import '../../node_modules/bulma/sass/grid/columns.sass';
+
+// Components
+// + specific UI components.
+@import '../../node_modules/bulma/sass/components/navbar.sass';
+@import './components/nav.scss'; // extending Bulma's navbar styles  
+@import './components/promotion.scss';
+
+// Utilities
+// + utilities and helper classes with ability to override anything 
+//   which goes before in the triangle, eg. hide helper class.
+// ...

@@ -1,0 +1,110 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - 
+// Mixin
+// - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+// 1. Push--auto...........centre a block element
+// 2. Pseudo...............implement the default position, content, and 
+// 		                   display for a pseudo element 
+// 3. Responsive-ratio.....reate scalable elements that maintain a ratio
+// 4. CSS-triangle.........create a pure css triangle 
+// 5. Input-placeholder
+// 6. For-size.............style for different breakpoints 
+
+
+// centre a block element
+@mixin push--auto {
+    margin: { 
+        left: auto;
+        right: auto;
+    }
+}
+
+
+// implement the default position, content, and display for
+// a pseudo element 
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+
+
+// create scalable elements that maintain a ratio
+// 
+// div {
+//     @include responsive-ratio(16,9);
+// }
+@mixin responsive-ratio($x, $y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    } @else {
+        padding-top: $padding;
+    }
+}
+
+
+// create a pure css trinagle 
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+    @include pseudo($pos: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round( $size / 2.5 );
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5 );
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}
+
+
+// style input placeholder
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+    &::placeholder { @content; }
+}
+
+
+// style for different breakpoints
+@mixin for-size($size) {
+	@if $size == phone-only {
+		@media (max-width: 576px) { @content; }
+	} @else if $size == tablet-portrait-up {
+		@media (min-width: 577px) { @content; }
+	} @else if $size == tablet-landscape-up {
+		@media (min-width: 768px) { @content; }
+	} @else if $size == desktop-up {
+		@media (min-width: 992px) { @content; }
+	} @else if $size == big-desktop-up {
+		@media (min-width: 1200px) { @content; }
+	}
+}

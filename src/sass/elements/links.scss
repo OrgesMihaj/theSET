@@ -1,0 +1,22 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - 
+// Links
+// - - - - - - - - - - - - - - - - - - - - - - - - 
+
+ 
+ // 1. Set the default `color` for every link in the website, sourced from
+ //    color variables.
+ // 2. Remove the outline that results in links that are focused or active 
+
+ a {
+	color: $link-color; /* [1] */
+	text-decoration: none;
+
+	&:focus,
+	&:active {
+		outline: none; /* [2] */
+	}
+
+	&:hover {
+		color: inherit;
+	}
+}

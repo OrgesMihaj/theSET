@@ -1,0 +1,27 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - 
+// Box Sizing
+// - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+// The box-sizing property allows us to include the padding and border in an
+// element's total width and height.
+
+// box-sizing: border-box;  - The padding and border are included in the width
+//                            and height
+
+// https://www.w3schools.com/cssref/css3_pr_box-sizing.asp
+
+// More sensible default box-sizing:
+// css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+
+
+
+html {
+    box-sizing: border-box;
+  }
+  
+  * {
+      &, &:before, &:after {
+          box-sizing: inherit;
+      }
+  }

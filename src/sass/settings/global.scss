@@ -1,0 +1,25 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - 
+// Global
+// - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+/**
+* The global settings file contains project-wide variables that can 
+* be accessed to the entire codebase.
+*
+* 1. Specifies a transition effect with a slow start and end. (W3S)
+*/
+
+$global-radius		 : 3px !default;
+$global-transition	 : all 300ms ease-in-out !default; /* [1] */
+$global-spacing-unit : 1.5rem !default;
+$global-font-size	 : 16px !default;
+$global-line-height  : 24px !default;
+
+
+// Bulma related global variables
+$family-sans-serif      : 'Nunito', sans-serif;
+$body-background-color  : #fff;
+$control-border-width   : 2px;
+$input-border-color     : transparent;
+$input-shadow   : none;
