@@ -25,6 +25,10 @@
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
+// Font Awesome
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+
 // Bulma framework base styles. 
 // Website: bulma.io
 @import '../../node_modules/bulma/sass/utilities/_all.sass';
@@ -70,6 +74,8 @@
 @import '../../node_modules/bulma/sass/elements/container.sass';
 @import '../../node_modules/bulma/sass/form/_all.sass';
 @import '../../node_modules/bulma/sass/grid/columns.sass';
+@import './objects/countdown.scss';
+
 
 // Components
 // + specific UI components.

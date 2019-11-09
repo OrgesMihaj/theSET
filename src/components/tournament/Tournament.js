@@ -1,27 +1,41 @@
 import React, { Component } from 'react';
 
+import Countdown from '../utils/Countdown';
+
 class Tournament extends Component {
 
     render () {
+        
         return (
-            <section className="promotion">
-            
-                <div className="columns is-gapless">
-                    <div className="column is-half">
-                        
-                        <div className="promotion__text">
-                            <span className="tag is-primary">Programming Competition</span>
-                            <h3 className="title">theSET OpenChallenge</h3>
+            <div className="columns is-gapless">
+                <div className="column is-half">
+                    
+                    {/* Promotion section starts here */}
+                    <div className="promotion">
+
+                        <div className="promotion__header">
+                            <span className="promotion__tag">Programming Competition</span>
+                            <h3 className="title">theSET Hello World</h3>
                         </div>
+                        
+                        <Countdown date={`2019-11-13T18:00:00`} />
 
-                    </div>
+                        <p className="promotion__description">
+                            You will be given 6 problems and the contest duration will be 2:15 hours. The complexity of the problems will be from all levels, so everyone is welcomed to come, even if you are new to programming, as the main goal is to show everyone how competitive programming works.
+                        </p>
 
-                    <div className="column is-half">
-                        <img className="promotion__image" alt="Tournament" src="img/tournament.jpg" />
+                        <div className="promotion__location">
+                            <i className="fas fa-map-marker-alt"></i> American University in Bulgaria
+                        </div>
                     </div>
+                    {/* Promotion section ends here */}
+
                 </div>
-            
-            </section>
+
+                <div className="column is-half">
+                    <img className="promotion__image" alt="Tournament" src="img/tournament.jpg" />
+                </div>
+            </div>
         );
     }; /* </render> */
 }

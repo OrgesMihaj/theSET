@@ -7,6 +7,17 @@
     background-color: transparent;
     padding: 10px 12% 0 6%;
 
+    .navbar-brand .navbar-item {
+        background: url(/img/logo.png) no-repeat center center;
+        background-size: cover;
+        color: #000;
+        height: 50px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-indent: 45px;
+        width: 70px;
+    }
+
     .navbar-item {
         transition: color $global-transition-timing ease;
     }

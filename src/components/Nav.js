@@ -8,8 +8,8 @@ class Nav extends Component {
                 <div className="navbar-brand">
 
                     {/* Brand logo */}
-                    <a className="navbar-item" href="https://bulma.io">
-                        <img src="https://bulma.io/images/bulma-logo.png" alt="theSET" width="112" height="28" />
+                    <a className="navbar-item" href="/">
+                        theSET
                     </a>
 
                     {/* Burger icon visible only on mobiles */}
@@ -38,6 +38,10 @@ class Nav extends Component {
                         
                         <li className="navbar-item">
                             <a href="/" className="navbar-item">Who?</a>
+                        </li>
+
+                        <li className="navbar-item">
+                            <a href="/" className="navbar-item">Login</a>
                         </li>
                     </div>
                 </div>

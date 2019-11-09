@@ -1,0 +1,13 @@
+.countdown {
+    display: flex;
+    margin-bottom: 2rem;
+
+    .countdown__column {
+        text-align: center;
+        margin-right: 1.71rem;
+
+        .countdown__number {
+            font-size: 3rem;
+        }
+    }
+} /* </countdown> */
