@@ -1,11 +1,31 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - 
+// Promotion
+// - - - - - - - - - - - - - - - - - - - - - - - - 
+
 .promotion {
     display: flex;
         flex-direction: column;
-        justify-content: center;
-    margin-left: 13.4%;
+        
+        // Not centered for mobile devices. 
+        @include min-device(tablet) {
+            justify-content: center;
+            height: 100vh;
+        }
+    
+    margin-left: 10%;
     margin-right: 10%;
-    height: 100vh;
 
+    @include max-device(tablet) {
+        margin-top: 10%;
+    }
+
+    // Align promotion text and logo on the 
+    // same line for desktop devices. 
+    @include min-device(desktop) {
+        margin-left: 13.7%;
+    }
+
+    // Display tournament's category. 
     .promotion__tag {
         display: inline-block;
         background: $primary;
@@ -28,6 +48,20 @@
         font-size: 0.9rem;
         font-weight: 500;
     }
+
+    @at-root .columns {
+
+        @include max-device(tablet) {
+            display: flex;
+            flex-direction: column-reverse;
+
+            .promotion__image {
+                height: 40vh;
+                margin-top: -52px;
+            }
+        }  
+    } /* </@at-root> */
+
 } /* </promotion__text> */
 
 .promotion__image {
