@@ -1,12 +1,21 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - 
-// NavBar
+// Navigation Menu 
+// Extend: navbar from Bulma 
 // - - - - - - - - - - - - - - - - - - - - - - - - 
 
 // extending navbar class of Bulma framework
 .navbar {
     background-color: transparent;
-    padding: 10px 12% 0 6%;
 
+    // Applied to tablets and devices larger than tablets. 
+    @include min-device(tablet) {
+        position: fixed;
+            top: 0; left: 0; right: 0;
+
+        padding: 1rem 12% 0 6%;
+    }
+
+    // Positioning and styling SET's logo 
     .navbar-brand .navbar-item {
         background: url(/img/logo.png) no-repeat center center;
         background-size: cover;
@@ -17,15 +26,17 @@
         text-indent: 45px;
         width: 70px;
     }
-
-    .navbar-item {
-        transition: color $global-transition-timing ease;
-    }
-
-    // custom class not provided by the framework
+    
+    // Current active link styles. 
     .navbar-item-link.is-active {
         border-bottom: 3px solid $primary;
         color: $primary;
         font-weight: 700;
+    }
+    
+    // Apply a smooth color transition for links when 
+    // user hovers on them. 
+    .navbar-item {
+        transition: color $global-transition-timing ease;
     }
 } /* </navbar> */

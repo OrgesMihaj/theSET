@@ -32,7 +32,7 @@ class Nav extends Component {
     render () {
         return (
             
-            <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+            <nav className="navbar" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
 
                     {/* Brand logo */}
