@@ -1,0 +1,86 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - 
+// Media Queries
+// - - - - - - - - - - - - - - - - - - - - - - - - 
+
+// Storing breakpoints in a SASS map based on 
+// the most popular devices.
+$devices: (
+    mobile: 480px,
+    tablet: 768px,
+    desktop: 992px,
+    large-desktop: 1200px
+);
+
+// Organizing media queries in four re-usable SASS mixins: 
+// + @mixin min-device ($device)
+// + @mixin max-device ($device)
+// + @mixin only-device ($device)
+// + @mixin between-devices ($min-device, $max-device)
+
+
+// Explaination: 
+// 1. Returns the value to which the specified key is mapped, 
+//    or null if this map contains no mapping for the key.
+// 2. Returns whether a map has a value associated with a given key. 
+// 3. Returns a list of all keys in a map.
+// 4. Check if the specified device that is the largest one. 
+// 5. Returns a specific item in a list.
+
+
+// The content will be applied to devices with the same size or 
+// higher than the device specified. 
+@mixin min-device($device: map-get($devices, 'phone')) { /* [1] */
+    @if map-has-key($devices, $device) { /* [2] */
+        @media screen and (min-width: map-get($devices, $device)) {
+            @content;
+        }
+    }
+} /* </min-device> */
+
+// The content will be applied to devices with the same size or 
+// smaller than the device specified. 
+@mixin max-device($device: map-get($devices, 'phone')) { /* [1] */
+    @if map-has-key($devices, $device) { /* [2] */
+        @media screen and (max-width: map-get($devices, $device) - 1) {
+            @content;
+        }
+    }
+} /* </max-device> */
+
+// The content will be applied to the defined device. 
+@mixin only-device($device: map-get($devices, 'phone')) { /* [1] */
+    @if map-has-key($devices, $device) { /* [2] */
+        $devices-length: length($devices);
+        $map-list: map-keys($devices); /* [3] */
+
+        @if index($map-list, $device) == $devices-length { /* [4] */
+            @include min-device($device) {
+                @content;
+            }
+        } @else {
+            $next-device-index: index($map-list, $device) + 1;
+            $next-device-key: nth($map-list, $next-device-index); /* [5] */
+
+            @media screen and (min-width: map-get($devices, $device)) and (max-width: map-get($devices, $next-device-key) - 1) {
+                @content;
+            }
+        }
+    } /* </map-has-key> */
+} /* </only-device> */
+
+// The content will be applied to the devices between the size 
+// of the first device (specified as the first parameter) and the 
+// size of the second device (specified as the second parameter).
+@mixin between-devices(
+    $min-device: map-get($devices, 'phone'), /* [1] */
+    $max-device: map-get($devices, 'tablet') /* [1] */
+) {
+    /* [2] */
+    @if map-has-key($devices, $min-device) and
+        map-has-key($devices, $max-device) 
+    {
+        @media screen and (min-width: map-get($devices, $min-device)) and (max-width: map-get($devices, $max-device) - 1) {
+            @content;
+        }
+    }
+} /* </between-devices> */
