@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
 
 class Nav extends Component {
+    
+    constructor (props) {
+        super(props);
+
+        this.state = {
+            showLogin: false
+        }
+    }
+
+    // Show/Hide login form
+    toggleLogin () {
+        this.setState({
+            showLogin: !this.state.showLogin
+        })
+    }
 
     render () {
         return (
@@ -41,12 +56,27 @@ class Nav extends Component {
                         </li>
 
                         <li className="navbar-item">
-                            <a href="/" className="navbar-item">Login</a>
+                            <a href="/" className="navbar-item" onClick={this.toggleLogin.bind(this)} ref="login">Login</a>
                         </li>
                     </div>
                 </div>
                 {/* </Navbar-menu ends here> */}
+
+                <div className={this.state.showLogin ? 'modal is-active' : 'modal'}>
+                    <div className="modal-background" onClick={this.toggleLogin.bind(this)}></div>
+
+                    <div className="modal-content">
+                        <p className="image is-4by3">
+                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="" />
+                        </p>
+                    </div>
+
+                    <button className="modal-close is-large" onClick={this.toggleLogin.bind(this)} aria-label="close"></button>
+                </div>
+                
             </nav>
+
+            
         );
     }; /* </render> */
 }

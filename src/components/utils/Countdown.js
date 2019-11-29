@@ -7,16 +7,12 @@ class Countdown extends Component {
         super(props);
 
         this.state = {
-            days:  0,
-            hours: 0,
-            min:   0,
-            sec:   0,
+            days: 0, hours: 0, min: 0, sec: 0,
         }
     }
 
     componentDidMount() {
         // update every second
-
         this.interval = setInterval(() => {
             const date = this.calculateCountdown(this.props.date);
             
