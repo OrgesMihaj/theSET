@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
+import { Link } from 'react-router-dom';
+
 class Nav extends Component {
     
     constructor (props) {
         super(props);
 
         this.state = {
-            showLogin: false
+            showLogin: false,
+            showNavMobile: false,
         }
     }
 
@@ -17,8 +20,18 @@ class Nav extends Component {
         })
     }
 
+    // Show/Hide navigation on mobile devices 
+    toggleNavMobile = (event) => {
+        event.preventDefault();
+
+        this.setState({
+            showNavMobile: !this.state.showNavMobile
+        })
+    }
+
     render () {
         return (
+            
             <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
 
@@ -28,21 +41,23 @@ class Nav extends Component {
                     </a>
 
                     {/* Burger icon visible only on mobiles */}
-                    <a role="button" className="navbar-burger burger" href="/"
-                    aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <a onClick={this.toggleNavMobile} role="button" className="navbar-burger burger" href="/"
+                       aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                     </a>
                 </div>
 
-                {/* <Navbar-menu starts here> */}
-                <div className="navbar-menu">
-                    <div className="navbar-end">
-                        <li className="navbar-item">
-                            <a className="navbar-item-link is-active" href="/">Now</a>
-                        </li>
 
+                {/* <Navbar-menu starts here> */}
+                <div className={(this.state.showNavMobile) ? "navbar-menu is-active" : "navbar-menu"}>
+                    <div className="navbar-end">
+                    
+                        <li className="navbar-item">
+                            <Link className="navbar-item-link is-active" to='/now'>Now</Link>
+                        </li>
+                         
                         <li className="navbar-item">
                             <a href="/" className="navbar-item">Tournaments</a>
                         </li>
@@ -52,7 +67,7 @@ class Nav extends Component {
                         </li>
                         
                         <li className="navbar-item">
-                            <a href="/" className="navbar-item">Who?</a>
+                            <Link className="navbar-item" to='/about'>Who?</Link>
                         </li>
 
                         <li className="navbar-item">
@@ -75,9 +90,8 @@ class Nav extends Component {
                 </div>
                 
             </nav>
-
             
-        );
+        ); /* </return> */
     }; /* </render> */
 }
 

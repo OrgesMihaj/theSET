@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 
-import Nav from '../nav/Nav';
-import Tournament from '../tournament/Tournament';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import Nav from '../nav';
+import Routes from '../../routes';
 import '../../assets/sass/App.scss';
+
 
 class App extends Component {
 	
 	render() {
 		return (
-			<div className="App">
-				<Nav />
+			<div className="app">
+				<Router>
+					<Nav></Nav>
 
-				<Tournament />
+					<Routes></Routes>
+				</Router>
 			</div>
 		);
 	}
