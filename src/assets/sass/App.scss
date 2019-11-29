@@ -26,13 +26,13 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
 // Font Awesome
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
 
 // Bulma framework base styles. 
 // Website: bulma.io
-@import '../../node_modules/bulma/sass/utilities/_all.sass';
-@import '../../node_modules/bulma/sass/base/_all.sass';
+@import '../../../node_modules/bulma/sass/utilities/_all.sass';
+@import '../../../node_modules/bulma/sass/base/_all.sass';
 
 // ---------------------------------------------
 // ITCSS structure
@@ -59,9 +59,9 @@
 // Elements
 // + styling for bare HTML elements (like H1, A, etc.). These come 
 //   with default styling from the browser so we can redefine them here.
-@import '../../node_modules/bulma/sass/elements/tag.sass';
-@import '../../node_modules/bulma/sass/elements/title.sass';
-@import '../../node_modules/bulma/sass/elements/button.sass';
+@import '../../../node_modules/bulma/sass/elements/tag.sass';
+@import '../../../node_modules/bulma/sass/elements/title.sass';
+@import '../../../node_modules/bulma/sass/elements/button.sass';
 @import './elements/headings.scss';
 @import './elements/images.scss';
 @import './elements/links.scss';
@@ -69,18 +69,18 @@
 // Objects
 // + class-based selectors which define undecorated design patterns, 
 //   for example media object known from OOCSS.
-@import '../../node_modules/bulma/sass/layout/hero.sass';
-@import '../../node_modules/bulma/sass/layout/section.sass';
-@import '../../node_modules/bulma/sass/elements/container.sass';
-@import '../../node_modules/bulma/sass/form/_all.sass';
-@import '../../node_modules/bulma/sass/components/modal.sass';
-@import '../../node_modules/bulma/sass/grid/columns.sass';
+@import '../../../node_modules/bulma/sass/layout/hero.sass';
+@import '../../../node_modules/bulma/sass/layout/section.sass';
+@import '../../../node_modules/bulma/sass/elements/container.sass';
+@import '../../../node_modules/bulma/sass/form/_all.sass';
+@import '../../../node_modules/bulma/sass/components/modal.sass';
+@import '../../../node_modules/bulma/sass/grid/columns.sass';
 @import './objects/countdown.scss';
 
 
 // Components
 // + specific UI components.
-@import '../../node_modules/bulma/sass/components/navbar.sass';
+@import '../../../node_modules/bulma/sass/components/navbar.sass';
 @import './components/nav.scss'; // extending Bulma's navbar styles  
 @import './components/promotion.scss';
 

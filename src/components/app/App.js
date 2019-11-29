@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Nav from './components/Nav';
-import './sass/App.scss';
-import Tournament from './components/tournament/Tournament';
+import Nav from '../nav/Nav';
+import Tournament from '../tournament/Tournament';
+import '../../assets/sass/App.scss';
 
 class App extends Component {
 	
