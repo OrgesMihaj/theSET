@@ -1,20 +1,29 @@
 import React from 'react';
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Tournament from './components/tournament/Tournament';
+import Articles from './components/article/Articles';
 
 const Routes = (props) => (
-<Router {...props}>
+    <div>
     <Switch>
-        <Route path={"/"} component={Tournament} exact />
-        <Route path={"/now"} component={Tournament} />
+        <Route exact path="/">
+            <Tournament />
+        </Route>
 
+        <Route path="/now">
+            <Tournament />
+        </Route>
+
+        <Route path="/articles">
+            <Articles />
+        </Route>
 
         {/* Default page */}
         <Route path="*" component={Tournament} />
     </Switch>
-</Router>
+    </div>
 );
 
 export default Routes;

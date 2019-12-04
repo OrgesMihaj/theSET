@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Nav extends Component {
     
@@ -55,23 +55,23 @@ class Nav extends Component {
                     <div className="navbar-end">
                     
                         <li className="navbar-item">
-                            <Link className="navbar-item-link is-active" to='/now'>Now</Link>
+                            <NavLink activeClassName='is-active' className="navbar-item-link" to='/now'>Now</NavLink>
                         </li>
                          
                         <li className="navbar-item">
-                            <a href="/" className="navbar-item">Tournaments</a>
+                            <NavLink to='/now' className="navbar-item">Tournaments</NavLink>
                         </li>
 
                         <li className="navbar-item">
-                            <a href="/" className="navbar-item">Articles</a>
+                            <NavLink activeClassName='is-active' className="navbar-item-link" to='/articles'>Articles</NavLink>
                         </li>
                         
                         <li className="navbar-item">
-                            <Link className="navbar-item" to='/about'>Who?</Link>
+                            <NavLink className="navbar-item" to='/about'>Who?</NavLink>
                         </li>
 
                         <li className="navbar-item">
-                            <a href="/" className="navbar-item" onClick={this.toggleLogin.bind(this)} ref="login">Login</a>
+                            <NavLink to='/now' className="navbar-item" onClick={this.toggleLogin.bind(this)} ref="login">Login</NavLink>
                         </li>
                     </div>
                 </div>

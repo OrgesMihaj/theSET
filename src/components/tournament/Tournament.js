@@ -4,14 +4,22 @@ import Countdown from '../utils/Countdown';
 
 class Tournament extends Component {
 
+    constructor () {
+        super();
+
+        this.state = {
+            isLoading: false,
+            currentTournament: true
+        }
+    }
+
     componentDidMount () {
 
-        // 1. Transform the data into json
-        fetch('https://theset.herokuapp.com/api/v1/tournaments')
-                .then((response) => response.json()) /* [1] */
-                .then((data) => {
-                    console.log(data);
-                });
+        // await fetch('https://theset.herokuapp.com/api/v1/articles/1')
+        //         .then(response => response.json()) 
+        //         .then(data => {
+        //             this.setState({ currentTournament: data, isLoading: false });
+        //         });
     }
 
     render () {
@@ -21,23 +29,27 @@ class Tournament extends Component {
                 <div className="column is-half">
                     
                     {/* Promotion section starts here */}
-                    <div className="promotion">
+                    {this.state.isLoading || !this.state.currentTournament ? (
+                        <div>Loading...</div>
+                    ) : (
+                        <div className="promotion">
 
-                        <div className="promotion__header">
-                            <span className="promotion__tag">Programming Competition</span>
-                            <h3 className="title">theSET Hello World</h3>
+                            <div className="promotion__header">
+                                <span className="promotion__tag">Programming Competition</span>
+                                <h3 className="title">theSET: Hello World</h3>
+                            </div>
+                            
+                            <Countdown date={`2019-11-19T18:00:00`} />
+
+                            <p className="promotion__description">
+                                You will be given 6 problems and the contest duration will be 2:15 hours. The complexity of the problems will be from all levels, so everyone is welcomed to come, even if you are new to programming, as the main goal is to show everyone how competitive programming works.
+                            </p>
+
+                            <div className="promotion__location">
+                                <i className="fas fa-map-marker-alt"></i> American University in Bulgaria
+                            </div>
                         </div>
-                        
-                        <Countdown date={`2019-11-19T18:00:00`} />
-
-                        <p className="promotion__description">
-                            You will be given 6 problems and the contest duration will be 2:15 hours. The complexity of the problems will be from all levels, so everyone is welcomed to come, even if you are new to programming, as the main goal is to show everyone how competitive programming works.
-                        </p>
-
-                        <div className="promotion__location">
-                            <i className="fas fa-map-marker-alt"></i> American University in Bulgaria
-                        </div>
-                    </div>
+                    )}
                     {/* Promotion section ends here */}
 
                 </div>
