@@ -1,0 +1,49 @@
+.divider {
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    @for $i from 1 through 10 {
+        &.divider--width-#{$i} {
+            border-top: $i * 1px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    /* <Divider length> */
+    &.divider--short {
+        width: 25px;
+    }
+
+    &.divider--full {
+        width: 100%;
+    }
+    /* </Divider length> */
+
+
+    /* <Divider space> */
+    &.divider--no-space {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    @for $i from 1 through 8 {
+        &.divider--space-#{$i} {
+            margin-top: $i * 1rem;
+            margin-bottom: $i * 1rem;
+        }
+    }
+    /* </Divider space> */
+
+
+    /* <Divider colors> */
+    &.divider--color-primary {
+        border-color: $primary;
+    }
+
+    &.divider--color-secondary {
+        border-color: $secondary;
+    }
+    /* </Divider colors> */
+
+} /* </divider> */
+

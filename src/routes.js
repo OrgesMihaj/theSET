@@ -3,7 +3,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Tournament from './components/tournament/Tournament';
-import Articles from './components/article/Articles';
+import Articles from './components/articles/Articles';
 
 const Routes = (props) => (
     <div>
