@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { NavLink } from 'react-router-dom';
 
+import Logo from '../../assets/images/logo.png';
+
 class Nav extends Component {
     
     constructor (props) {
