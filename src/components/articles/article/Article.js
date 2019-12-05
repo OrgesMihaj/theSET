@@ -16,14 +16,20 @@ class Article extends Component {
         
         return (
             <article className="article">
-                {this.props.article.categories.map((category, index) => {
-                    return (<div key={index}>{category.name}</div>)
-                })}
+                <div className="article__categories">
+                    {this.props.article.categories.map((category, index) => {
+                        return (<div className="tag is-primart category" key={index}>{category.name}</div>)
+                    })}
+                </div>
 
                 <h3 className="article__title">{this.props.article.title}</h3>
                                         
                 <p className="article__description">
-                    {this.props.article.description}
+                    {
+                        (this.props.article.description.length > 250) ?
+                            (this.props.article.description.substring(0, 250) + "...")
+                        : (this.props.article.description)
+                    }
                 </p>
             </article>
         );

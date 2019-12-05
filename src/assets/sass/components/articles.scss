@@ -34,6 +34,18 @@
 
 .article {
     margin-bottom: 5rem;
+    
+    .article__categories {
+        display: flex;
+        margin-bottom: .5rem;
+
+        .category {
+            margin-right: 1rem;
+            color: #fff;
+            background: $primary;
+        }
+
+    } /* </article__categories> */
 
     .article__title {
         border-bottom: 3px solid transparent;

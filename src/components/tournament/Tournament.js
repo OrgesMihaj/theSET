@@ -39,7 +39,7 @@ class Tournament extends Component {
                                 <h3 className="title">theSET: Hello World</h3>
                             </div>
                             
-                            <Countdown date={`2019-11-19T18:00:00`} />
+                            <Countdown date={`2020-01-19T18:00:00`} />
 
                             <p className="promotion__description">
                                 You will be given 6 problems and the contest duration will be 2:15 hours. The complexity of the problems will be from all levels, so everyone is welcomed to come, even if you are new to programming, as the main goal is to show everyone how competitive programming works.
