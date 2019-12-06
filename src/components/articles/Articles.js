@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import PageHeaderImage from './../../assets/images/headers/book-on-the-glass.jpg';
+
 import Article from './article';
 
 class Articles extends Component {
@@ -35,7 +37,7 @@ class Articles extends Component {
             <section className="articles">
                 
                 <header className="articles__header">
-                    <img className="header__image" alt="Christmas lights" src="img/headers/christmas-lights-header.png" />
+                    <img className="header__image" alt="Christmas lights" src={PageHeaderImage} />
                 </header>
 
                 {/* Articles container starts here */}

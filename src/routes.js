@@ -1,27 +1,19 @@
 import React from 'react';
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
-import Tournament from './components/tournament/Tournament';
 import Articles from './components/articles/Articles';
+import Tournament from './components/tournament/Tournament';
 
 const Routes = (props) => (
     <div>
     <Switch>
-        <Route exact path="/">
-            <Tournament />
-        </Route>
-
-        <Route path="/now">
-            <Tournament />
-        </Route>
-
-        <Route path="/articles">
-            <Articles />
-        </Route>
+        <Route exact path="/"   component={Tournament}></Route>
+        <Route path="/now"      component={Tournament}></Route>
+        <Route path="/articles" component={Articles}></Route>
 
         {/* Default page */}
-        <Route path="*" component={Tournament} />
+        <Redirect to="/" />
     </Switch>
     </div>
 );
