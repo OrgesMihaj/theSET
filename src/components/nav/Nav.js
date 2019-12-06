@@ -38,7 +38,7 @@ class Nav extends Component {
                 <div className="navbar-brand">
 
                     {/* Brand logo */}
-                    <a className="navbar-item" href="/">
+                    <a className="navbar-item" href="/" style={{backgroundImage: 'url('+ Logo +')'}}>
                         theSET
                     </a>
 
