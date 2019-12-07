@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 
 import Countdown from '../utils/Countdown';
-import TournamentPromotion from '../../assets/images/tournament.jpg';
+import PromotionImage from '../../assets/images/tournament-promotion-image.jpg';
+import TinyPromotionImage from '../../assets/images/tournament-tiny-promotion-image.jpg';
+
+import ImageLoader from '../../atoms/imgLoader';
 
 class Tournament extends Component {
 
@@ -56,7 +59,10 @@ class Tournament extends Component {
                 </div>
 
                 <div className="column is-half">   
-                    <img className="promotion__image" alt="Tournament" src={TournamentPromotion} />
+                    <ImageLoader classNames={['promotion__image']}
+                                 alt="Tournament light bulb promotion image." 
+                                 image={PromotionImage}
+                                 tinyImage={TinyPromotionImage} />
                 </div>
             </div>
         );

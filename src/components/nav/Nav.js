@@ -57,19 +57,27 @@ class Nav extends Component {
                     <div className="navbar-end">
                     
                         <li className="navbar-item">
-                            <NavLink activeClassName='is-active' className="navbar-item-link" to='/now'>Now</NavLink>
+                            <NavLink activeClassName='is-active' className="navbar-item-link" to='/now'>
+                                Now
+                            </NavLink>
                         </li>
 
                         <li className="navbar-item">
-                            <NavLink activeClassName='is-active' className="navbar-item-link" to='/articles'>Daily</NavLink>
+                            <NavLink  activeClassName='is-active' className="navbar-item-link" to='/articles'>
+                                Daily
+                            </NavLink>
                         </li>
                         
                         <li className="navbar-item">
-                            <NavLink className="navbar-item" to='/about'>Who?</NavLink>
+                            <NavLink className="navbar-item-link" to='/about'>
+                                Who?
+                            </NavLink>
                         </li>
 
                         <li className="navbar-item">
-                            <NavLink to='/now' className="navbar-item" onClick={this.toggleLogin.bind(this)} ref="login">Login</NavLink>
+                            <NavLink to='/now' className="navbar-item-link" onClick={this.toggleLogin.bind(this)} ref="login">
+                                Login
+                            </NavLink>
                         </li>
                     </div>
                 </div>

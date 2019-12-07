@@ -3,7 +3,7 @@
 // Extend: navbar from Bulma 
 // - - - - - - - - - - - - - - - - - - - - - - - - 
 
-// extending navbar class of Bulma framework
+// Extending navbar class of Bulma framework.
 .navbar {
     background-color: transparent;
 
@@ -15,7 +15,38 @@
         padding: 1rem 12% 0 6%;
     }
 
-    // Positioning and styling SET's logo 
+    // Consists of `navbar-item`<li> and `navbar-item-link`<a>.
+    // This style is applied only on devices less than the screen size 
+    // of a tablet and it is active.
+    .navbar-menu.is-active {
+        text-align: center;
+        padding-bottom: 0;
+        
+        // Remove the default padding of `navbar-item`<li> to provide
+        // a full container width for the `navbar-item-link`<a>.
+        .navbar-item {
+            padding: 0;
+        }
+
+        .navbar-item-link {
+            border-bottom: 1px solid #e3e3e3;
+            display: inline-block;
+            width: 100%;
+            padding: 8px 0;
+
+            // Applied only when the state of a link item is active.
+            &.is-active {
+                color: #fff;
+                background: $primary;
+                border-bottom: none;
+            }
+        } /* </navbar-item-link> */
+
+    } /* </navbar-menu.is-active> */
+    
+
+
+    // Positioning and styling SET's logo.
     .navbar-brand .navbar-item {
         background-position: center center;
         background-repeat: no-repeat;
@@ -39,5 +70,10 @@
     // user hovers on them. 
     .navbar-item {
         transition: color $global-transition-timing ease;
+    }
+
+    // Extra space between links. 
+    .navbar-item-link {
+        margin-right: 1rem;
     }
 } /* </navbar> */

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 import PageHeaderImage from './../../assets/images/headers/book-on-the-glass.jpg';
+import PageHeaderTinyImage from './../../assets/images/headers/book-on-the-glass-tiny.jpg';
+
+import ImgLoader from './../../atoms/imgLoader';
 
 import Article from './article';
 
@@ -37,7 +40,10 @@ class Articles extends Component {
             <section className="articles">
                 
                 <header className="articles__header">
-                    <img className="header__image" alt="Christmas lights" src={PageHeaderImage} />
+                    <ImgLoader classNames={['header__image']} 
+                               alt="Christmas lights" 
+                               image={PageHeaderImage}
+                               tinyImage={PageHeaderTinyImage} />
                 </header>
 
                 {/* Articles container starts here */}
