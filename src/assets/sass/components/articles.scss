@@ -2,7 +2,23 @@
 // Articles
 // - - - - - - - - - - - - - - - - - - - - - - - - 
 
-@import url('https://fonts.googleapis.com/css?family=Slabo+27px&display=swap');
+// Freight Text Pro ™ by GarageFonts
+// Source: myfonts.com/fonts/garagefonts/freight-text-pro
+//
+// 1. Define a custom font.
+// 2. OpenType is a format for scalable computer fonts.
+
+@font-face { /* [1] */
+    font-family: "freight-text-bold";
+    src: url('../../fonts/freight-text-pro/freight-text-bold.otf'); /* [2] */
+    font-weight: bold;
+}
+
+@font-face { /* [1] */
+    font-family: "freight-text";
+    src: url('../../fonts/freight-text-pro/freight-text-medium.otf'); /* [2] */
+}
+
 
 .articles__container {
     margin: 3rem auto 0 auto;
@@ -34,6 +50,7 @@
 
 .article {
     margin-bottom: 5rem;
+    font-family: "freight-text", Georgia, Cambria, "Times New Roman", Times, serif;
     
     .article__categories {
         display: flex;
@@ -47,21 +64,39 @@
 
     } /* </article__categories> */
 
-    .article__title {
-        border-bottom: 3px solid transparent;
-        color: #000;
-        cursor: pointer;
-        display: inline-block;
-        font-size: 2.5rem;
+    .article__information {
+        margin-bottom: .8rem;
+    }
 
+    .article__title {
+        color: #333;
+        cursor: pointer;
+        font-size: 2.5rem;
+        font-family: "freight-text-bold", Georgia, Cambria, "Times New Roman", Times, serif;
+        margin-bottom: .5rem;
+        
         &:hover {
-            border-bottom: 3px dotted $secondary;
+            color: $secondary;
+            text-decoration: underline;
         }
     } /* </article__title> */
 
+    .article__author {
+        color: #333;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1.1rem;
+        transition: background 330ms;
+
+        &:hover {
+            background: #fcf8e3;
+        }
+    }
+
     .article__description {
-        font-size: 1.3rem;
-        line-height: 1.3;
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 27px;
     }
 
 } /* </article> */
