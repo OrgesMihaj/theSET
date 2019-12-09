@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import PageHeaderImage from './../../assets/images/headers/book-on-the-glass.jpg';
-import PageHeaderTinyImage from './../../assets/images/headers/book-on-the-glass-tiny.jpg';
-
+import ArticleLoader from './../../atoms/articleLoader';
 import ImgLoader from './../../atoms/imgLoader';
+import PageHeaderTinyImage from './../../assets/images/headers/book-on-the-glass-tiny.jpg';
+import PageHeaderImage from './../../assets/images/headers/book-on-the-glass.jpg';
 
 import Article from './article';
 
@@ -65,7 +65,7 @@ class Articles extends Component {
                             )
                         })
                     ) : (
-                        <h3>Loading...</h3>
+                        <ArticleLoader loaderRepetition={4} />
                     )}
                     {/* Articles list ends here */}
 
